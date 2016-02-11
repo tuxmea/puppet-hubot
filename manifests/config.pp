@@ -11,6 +11,10 @@ class hubot::config (
   $campfire_account = undef,
   $campfire_rooms = undef,
   $campfire_token = undef,
+  $xmpp_server = undef,
+  $xmpp_rooms = undef,
+  $xmpp_user = undef,
+  $xmpp_pass = undef,
   $vagrant_hubot,
   $environment = undef
 ) {
@@ -26,6 +30,11 @@ class hubot::config (
         if (!defined($campfire_account)) and ($campfire_rooms[0] == '') and (!defined($campfire_token)) {
             fail('Required Options missing: Attribute adapter requires options: campfire_account, campfire_rooms, campfire_token')
         }
+    }
+    xmpp: {
+      if (!defined($xmpp_server)) and ($xmpp_rooms == '') and (!defined($xmpp_user)) and (!defined($xmpp_pass)) {
+        fail('Required Options missing: attribute adapter requires options: xmpp_server, xmpp_rooms, xmpp_user, xmpp_pass')
+      }
     }
     default:  {
       fail("Unsupported Adapter: ${adapter}. Supported Adpaters: irc|campfire")

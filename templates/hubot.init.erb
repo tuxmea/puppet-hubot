@@ -33,6 +33,11 @@ export HUBOT_CAMPFIRE_ACCOUNT='<%= @campfire_account %>'
 export HUBOT_CAMPFIRE_ROOMS='<%= @campfire_rooms.join(",") %>'
 export HUBOT_CAMPFIRE_TOKEN='<%= @campfire_token %>'
 export HUBOT_OPTS="-a $HUBOT_ADAPTER"
+<% elsif @adapter == 'xmpp' -%>
+export HUBOT_XMPP_USERNAME='<%= @xmpp_user %>'
+export HUBOT_XMPP_PASSWORD='<%= @xmpp_pass %>'
+export HUBOT_XMPP_ROOMS='<%= @xmpp_rooms %>'
+export HUBOT_XMPP_HOST='<%= @xmpp_server %>'
 <% end -%>
 <% if @environment -%>
 <% environment.each do |var| -%>

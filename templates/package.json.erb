@@ -1,6 +1,6 @@
 {
   "name":        "hubot",
-  "version":     "2.3.2",
+  "version":     "2.18.0",
   "author":      "hubot",
   "keywords":    "github hubot campfire bot",
   "description": "A simple helpful Robot for your Company",
@@ -18,7 +18,10 @@
     <% if @adapter == 'irc' -%>
     "hubot-irc": "0.1.0",
     <% end -%>
-    "hubot": "2.3.2",
+    <% if $adapter == 'xmpp' -%>
+    "hubot-xmpp": "0.2.1",
+    <% end -%>
+    "hubot": "2.18.0",
     "coffee-script": "1.3.3",
     "optparse": "1.0.3",
     "scoped-http-client": "0.9.7",

@@ -8,6 +8,11 @@ class hubot::params {
       $npm_packages = ['coffee-script']
       $service_name = 'hubot'
     }
+    /RedHat|CentOS/: {
+      $packages = ['openssl-devel', 'git', 'redis', 'expat-devel']
+      $npm_packages = ['coffee-script']
+      $service_name = 'hubot'
+    }
     default: {
         fail("Your OS: ${::operatingsystem} is not supported by this module")
     }
@@ -25,5 +30,12 @@ class hubot::params {
     nickname => 'crunchy',
     rooms    => ['#soggies'],
     server   => 'localhost',
+  }
+  # Default setting for XMPP
+  $xmpp = {
+    $server => 'localhost',
+    $user   => 'user',
+    $pass   => 'pass',
+    $rooms  => 'hubot',
   }
 }

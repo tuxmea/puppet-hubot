@@ -13,6 +13,10 @@ class hubot (
   $campfire_account = undef,
   $campfire_rooms   = undef,
   $campfire_token   = undef,
+  $xmpp_server      = undef,
+  $xmpp_rooms       = undef,
+  $xmpp_user        = undef,
+  $xmpp_pass        = undef,
   $environment      = undef,
 ) inherits hubot::params {
   include stdlib
@@ -34,6 +38,10 @@ class hubot (
     campfire_account => $campfire_account,
     campfire_rooms   => $campfire_rooms,
     campfire_token   => $campfire_token,
+    xmpp_server      => $xmpp_server,
+    xmpp_rooms       => $xmpp_rooms,
+    xmpp_user        => $xmpp_user,
+    xmpp_pass        => $xmpp_pass,
     vagrant_hubot    => $vagrant_hubot,
     environment      => $environment,
   }
