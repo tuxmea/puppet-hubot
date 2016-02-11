@@ -10,7 +10,7 @@ class hubot::params {
       $service_name = 'hubot'
     }
     /RedHat|CentOS/: {
-      $packages = ['openssl-devel', 'git', 'redis', 'expat-devel']
+      $packages = ['openssl-devel', 'redis', 'expat-devel']
       $git_package = 'git'
       $npm_packages = ['coffee-script']
       $service_name = 'hubot'
