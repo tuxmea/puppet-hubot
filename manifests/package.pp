@@ -7,6 +7,11 @@ class hubot::package (
     path => '/bin:/sbin:/usr/bin:/usr/sbin',
   }
 
+  if $hubot::manage_git_package {
+    package { $hubot::git_packages:
+      ensure => present,
+    }
+  }
   package { $hubot::packages:
     ensure => present,
   }

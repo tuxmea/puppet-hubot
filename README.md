@@ -20,10 +20,11 @@ Puppet Labs NodeJS
 
 <pre>
   class { 'hubot':
-    adapter => 'irc',
-    irc_nickname => 'crunchy',
-    irc_server   => 'irc.freenode.com',
-    irc_rooms    => ['#soggies'],
+    adapter            => 'irc',
+    irc_nickname       => 'crunchy',
+    irc_server         => 'irc.freenode.com',
+    irc_rooms          => ['#soggies'],
+    manage_git_package => true,
   }
 </pre>
 

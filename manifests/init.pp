@@ -18,6 +18,7 @@ class hubot (
   $xmpp_user        = undef,
   $xmpp_pass        = undef,
   $environment      = undef,
+  $manage_git_package = false,
 ) inherits hubot::params {
   include stdlib
 

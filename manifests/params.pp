@@ -2,14 +2,16 @@
 class hubot::params {
   case $::operatingsystem {
     /Debian|Ubuntu/: {
-      $packages = ['build-essential', 'libssl-dev', 'git-core',
+      $packages = ['build-essential', 'libssl-dev',
                     'redis-server', 'libexpat1-dev'
                   ]
+      $git_package = 'git-core'
       $npm_packages = ['coffee-script']
       $service_name = 'hubot'
     }
     /RedHat|CentOS/: {
       $packages = ['openssl-devel', 'git', 'redis', 'expat-devel']
+      $git_package = 'git'
       $npm_packages = ['coffee-script']
       $service_name = 'hubot'
     }
