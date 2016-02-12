@@ -63,17 +63,17 @@ stop_bot ()
 }
 
 case "$1" in
-start)    log_daemon_msg "Starting Hubot" "hubot"
+start)    echo "Starting Hubot" "hubot"
           start_bot
           ;;
-stop)     log_daemon_msg "Stopping Hubot" "hubot"
+stop)     echo "Stopping Hubot" "hubot"
           stop_bot
           ;;
-restart)  log_daemon_msg "Restarting Hubot" "hubot"
+restart)  echo "Restarting Hubot" "hubot"
           stop_bot
           start_bot
           ;;
-status)   log_action_begin_msg "Checking Hubot"
+status)   echo "Checking Hubot"
           if pidofproc -p "$PIDFILE" node >/dev/null; then
             log_action_end_msg 0 "running"
             exit 0
@@ -87,7 +87,7 @@ status)   log_action_begin_msg "Checking Hubot"
             fi
           fi
           ;;
-*)        log_action_msg "Usage: /etc/init.d/hubot {start|stop|status|restart}"
+*)        echo "Usage: /etc/init.d/hubot {start|stop|status|restart}"
           exit 2
           ;;
 esac
